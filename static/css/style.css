@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+    color: #00ffcc !important;
+}
+
+.nav-link {
+    color: #bca6a6 !important;
+    margin-right: 15px;
+}
+
+.nav-link:hover {
+    color: #00ffcc !important;
+}
+
+/* Hero Section */
+
+.hero {
+    height: 100vh;
+
+    background: linear-gradient(
+        rgba(17, 16, 16, 0.4),
+        rgba(15, 14, 14, 0.4)
+    ),
+    url("image.png") center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Heading */
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Quote */
+
+.hero-quote {
+    font-size: 20px;
+    margin-top: 20px;
+    font-style: italic;
+    color: #e6f7f5;
+}
+
+/* Get Started Button */
+
+.btn-custom {
+    margin-top: 25px;
+    padding: 12px 35px;
+    font-size: 18px;
+    border-radius: 30px;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+
+.btn-custom:hover {
+
+    transform: scale(1.08);
+
+    box-shadow: 0 0 15px #00ffcc;
+
+    background-color: #00b894;
+}
+
+/* Info Section */
+
+.info-section {
+    padding: 60px 20px;
+}
+
+.info-card {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Footer */
+
+footer {
+    background-color: #111;
+    color: #dbcece;
+    text-align: center;
+    padding: 15px 0;
+}

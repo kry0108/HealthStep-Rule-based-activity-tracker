@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Personal Health Profile</title>
+
+<link rel="stylesheet" href="{% static 'css/daily_entry.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2 class="logo">
+<span class="health">Health</span><span class="step">Step</span>
+</h2>
+
+<ul>
+
+<hr>
+<li><a href="{% url 'Profile' %}">Home</a></li>
+<hr>
+
+<li><a href="{% url 'daily_entry' %}">Daily Entry</a></li>
+<hr>
+
+<li><a href="{% url 'health_stat' %}">Health Stats</a></li>
+<hr>
+
+
+<li><a href="{% url 'personal' %}">Personal Profile</a></li>
+<hr>
+
+<li><a href="{% url 'logout' %}">Logout</a></li>
+<hr>
+
+</ul>
+
+</div>
+
+
+<!-- Main Content -->
+<div class="main">
+
+    <div class="profile-box">
+
+        <h2>Daily Health Entry</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Date</label>
+            <input type="date" name="date" required>
+
+            <label>Steps Count</label>
+            <input type="number" name="steps" required>
+
+            <label>Water Intake (Liters)</label>
+            <input type="number" step="0.1" name="water" required>
+
+            <label>Calories Consumed</label>
+            <input type="number" name="calories" required>
+
+            <button type="submit">Save Entry</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>HealthStep | Sign Up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+<script>
+function validateForm() {
+let name = document.forms["signupForm"]["fullname"].value;
+let age = document.forms["signupForm"]["age"].value;
+let password = document.forms["signupForm"]["password"].value;
+let confirmPassword = document.forms["signupForm"]["confirm_password"].value;
+
+let namePattern = /^[A-Za-z\s]+$/;
+
+if (!namePattern.test(name)) {
+alert("Name should contain only letters (no numbers or special characters)");
+return false;
+}
+
+if (age <= 0) {
+alert("Age must be a positive number");
+return false;
+}
+
+if (password !== confirmPassword) {
+alert("Passwords do not match");
+return false;
+}
+
+return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="signup-box">
+
+<h2>Create Account</h2>
+
+<form name="signupForm" method="post" action="{% url 'signup' %}" onsubmit="return validateForm()">
+
+{% csrf_token %}
+
+<input type="text" name="fullname" placeholder="Full Name"
+pattern="[A-Za-z\s]+" title="Only letters allowed" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="number" name="age" placeholder="Age" min="1" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+<select name="gender" required>
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<button type="submit">Sign Up</button>
+
+<p>
+Already have an account?
+<a href="/login/">Login</a>
+</p>
+
+</form>
+
+</div>
+
+</body>
+</html>

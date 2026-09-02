@@ -1,0 +1,190 @@
+body{
+margin:0;
+font-family:'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+
+.navbar{
+background-color:rgba(0,0,0,0.7);
+}
+
+.navbar-brand{
+font-weight:bold;
+font-size:24px;
+color:#00ffcc !important;
+}
+
+.nav-link{
+color:#bca6a6 !important;
+margin-right:15px;
+transition:0.3s;
+}
+
+.nav-link:hover{
+color:#00ffcc !important;
+}
+
+
+/* Hero Section */
+
+.hero{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.4),
+rgba(0,0,0,0.4)),
+url("image.png") center/cover no-repeat;
+
+display:flex;
+align-items:center;
+
+color:white;
+text-align:center;
+
+}
+
+
+/* Card container */
+
+.cards-container{
+
+margin-top:40px;
+
+display:flex;
+flex-direction:column;
+
+align-items:center;
+
+gap:25px;
+
+}
+
+
+/* Cards */
+
+.info-card{
+
+width:80%;
+
+padding:25px;
+
+background:rgba(255,255,255,0.6);
+
+border-radius:18px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+
+color:#161515;
+
+transition:0.3s;
+
+}
+
+
+/* Hover Effect */
+
+.info-card:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+
+}
+
+
+/* Card heading */
+
+.info-card h3{
+
+color:#00b894;
+
+margin-bottom:10px;
+
+}
+
+
+/* Footer */
+
+footer{
+
+background:#111;
+
+color:#dbcece;
+
+text-align:center;
+
+padding:15px 0;
+
+}
+/* Features container */
+
+.features-container{
+
+margin-top:40px;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+justify-content:center;
+
+max-width:800px;
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+
+/* Feature cards */
+
+.feature-card{
+
+padding:30px;
+
+background:rgba(255,255,255,0.9);
+
+border-radius:18px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+
+color:#333;
+
+transition:0.3s;
+
+height:220px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+
+/* Hover effect */
+
+.feature-card:hover{
+
+transform:translateY(-10px) scale(1.03);
+
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+
+}
+
+
+/* Heading */
+
+.feature-card h3{
+
+color:#00b894;
+
+margin-bottom:10px;
+
+}

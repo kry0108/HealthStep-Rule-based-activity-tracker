@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HealthStep | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index">HealthStep</a>
+
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/feature/">Features</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="signup">Register</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+    <div class="container text-center">
+
+        <h1>Welcome to HealthStep</h1>
+
+        <p>
+            HealthStep helps you maintain a healthy lifestyle by tracking
+            your daily activities and encouraging better fitness habits.
+        </p>
+
+        <!-- Get Started Button -->
+
+        <a href="signup" class="btn btn-success btn-lg mt-3">
+            Get Started
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- Info Section -->
+
+<section class="info-section">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <h2>Track Activities</h2>
+
+                    <p>
+                        Record your daily physical activities such as walking,
+                        running, and workouts to stay active.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <h2>Health Monitoring</h2>
+
+                    <p>
+                        Monitor your health progress and compare past
+                        and present records to track improvements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <h2>Stay Motivated</h2>
+
+                    <p>
+                        HealthStep encourages users to stay consistent
+                        with their fitness goals and healthy habits.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>© 2026 HealthStep | Stay Healthy Stay Active</p>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>HealthStep Dashboard</title>
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2 class="logo">
+<span class="health">Health</span><span class="step">Step</span>
+</h2>
+
+<ul>
+
+<hr>
+<li><a href="{% url 'Profile' %}">Home</a></li>
+<hr>
+
+<li><a href="{% url 'daily_entry' %}">Daily Entry</a></li>
+<hr>
+
+<li><a href="{% url 'health_stat' %}">Health Stats</a></li>
+<hr>
+
+
+<li><a href="{% url 'personal' %}">Personal Profile</a></li>
+<hr>
+
+<li><a href="{% url 'logout' %}">Logout</a></li>
+<hr>
+
+</ul>
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+    <h1 style="align-self:center;">Welcome {{user.name}}</h1>
+
+    <div class="top-row">
+        <div class="health-score-box">
+            <h2>Health Score</h2>
+            <h1>{{ health_score }}/100</h1>
+            <p>{{ health_status }}</p>
+        </div>
+    </div>
+
+
+    <!-- CHART SECTION -->
+    <div class="graph-container">
+
+        <div class="graph-box">
+            <h3>Daily Steps</h3>
+            <canvas id="stepsChart"></canvas>
+        </div>
+
+        <div class="graph-box">
+            <h3>Water Intake</h3>
+            <canvas id="waterChart"></canvas>
+        </div>
+
+        <div class="graph-box">
+            <h3>Calories Consumed</h3>
+            <canvas id="calorieChart"></canvas>
+        </div>
+
+    </div>
+
+
+    <!-- TASK SECTION -->
+    <div class="task-box">
+
+        <h2>Today's Tasks</h2>
+
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% empty %}
+                <li>Great job! No tasks for today 🎉</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- Django Data to JS -->
+
+{{ labels|json_script:"labels-data" }}
+{{ steps|json_script:"steps-data" }}
+{{ water|json_script:"water-data" }}
+{{ calories|json_script:"calories-data" }}
+
+<!-- Chart.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const labels = JSON.parse(document.getElementById('labels-data').textContent);
+const stepsData = JSON.parse(document.getElementById('steps-data').textContent);
+const waterData = JSON.parse(document.getElementById('water-data').textContent);
+const calorieData = JSON.parse(document.getElementById('calories-data').textContent);
+
+
+/* Steps Chart */
+
+new Chart(document.getElementById('stepsChart'), {
+
+type: 'line',
+
+data: {
+
+labels: labels,
+
+datasets: [{
+
+label: 'Steps',
+
+data: stepsData,
+
+borderColor: 'blue',
+
+fill:false
+
+}]
+
+}
+
+});
+
+
+/* Water Chart */
+
+new Chart(document.getElementById('waterChart'), {
+
+type: 'bar',
+
+data: {
+
+labels: labels,
+
+datasets: [{
+
+label: 'Water (Litres)',
+
+data: waterData,
+
+backgroundColor: 'green'
+
+}]
+
+}
+
+});
+
+
+/* Calories Chart */
+
+new Chart(document.getElementById('calorieChart'), {
+
+type: 'line',
+
+data: {
+
+labels: labels,
+
+datasets: [{
+
+label: 'Calories Consumed',
+
+data: calorieData,
+
+borderColor: 'red',
+
+fill:false
+
+}]
+
+}
+
+});
+
+</script>
+
+
+
+</body>
+</html>
